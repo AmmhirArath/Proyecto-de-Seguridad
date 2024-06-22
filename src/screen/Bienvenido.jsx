@@ -1,65 +1,63 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const Bienvenido = ({ navigation }) => {
+export default function Bienvenido() {
   return (
     <View style={styles.container}>
+      <View style={styles.curvedBackground}></View>
       <Text style={styles.welcomeText}>Bienvenido</Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Informacion"
-          onPress={() => navigation.navigate('Informacion')}
-          color="#fff"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Juegos"
-          onPress={() => navigation.navigate('Juegos')}
-          color="#fff"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Puntuacion"
-          onPress={() => navigation.navigate('Puntuacion')}
-          color="#fff"
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Salir"
-          onPress={() => navigation.navigate('Salir')}
-          color="#fff"
-        />
-      </View>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Informacion</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Juegos</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Puntuacion</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Salir</Text>
+      </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5e7d9e', 
-    justifyContent: 'center',
+    backgroundColor: 'white',
     alignItems: 'center',
-    padding: 20,
+    justifyContent: 'center',
+    position: 'relative',
+  },
+  curvedBackground: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '60%',
+    height: '100%',
+    backgroundColor: 'yellow',
+    borderBottomRightRadius: 300,
   },
   welcomeText: {
     fontSize: 24,
-    marginBottom: 20,
+    fontWeight: 'bold',
+    marginBottom: 40,
   },
-  buttonContainer: {
+  button: {
+    backgroundColor: 'white',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
     marginVertical: 10,
-    width: '80%',
-    backgroundColor: '#000', 
-    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 2,
   },
   buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    paddingVertical: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
-
-export default Bienvenido;
