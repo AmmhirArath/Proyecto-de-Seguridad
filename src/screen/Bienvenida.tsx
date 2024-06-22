@@ -16,8 +16,11 @@ const Bienvenida = () => {
       <View>
         <Image source={require('../assets/nubeGrande.png')} style={styles.nubeGrande} />
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Inicio')}>
-        <Text style={styles.buttonText}>Empezar</Text>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('SeleccionarEdad')}
+      >
+        <Text style={styles.buttonText}>EMPEZAR</Text>
       </TouchableOpacity>
     </View>
   );

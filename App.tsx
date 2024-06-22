@@ -3,6 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Bienvenida from './src/screen/Bienvenida';
 import Inicio from './src/screen/Inicio';
+import SeleccionarEdad from './src/screen/SeleccionarEdad'
+import Colores from './src/constants/Colores';
 import Bienvenido from './src/screen/Bienvenido';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
@@ -33,7 +35,12 @@ const App = () => {
         />
         <Stack.Screen 
           name="Inicio" 
-          component={Bienvenido} 
+          component={Inicio} 
+          options={{ headerShown: false }} 
+        />
+        <Stack.Screen 
+          name="SeleccionarEdad" 
+          component={SeleccionarEdad} 
           options={{ headerShown: false }} 
         />
       </Stack.Navigator>
