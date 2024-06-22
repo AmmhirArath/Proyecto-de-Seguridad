@@ -3,11 +3,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Bienvenida from './src/screen/Bienvenida';
 import Inicio from './src/screen/Inicio';
-import Colores from './src/constants/Colores';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';¿
 
 const Stack = createStackNavigator();
 
 const App = () => {
+  const [fontsLoaded, fontError]  = useFonts({
+    'Bold': require("./src/assets/fonts/InriaSans-Bold.ttf"),
+    'Regular': require("./src/assets/fonts/InriaSans-Regular.ttf")
+  })
+  const onLayoutRootView = React.useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Bienvenida">
