@@ -40,7 +40,7 @@ const Bienvenido = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFD700', 
+    backgroundColor: '#5e7d9e', 
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
