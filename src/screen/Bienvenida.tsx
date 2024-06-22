@@ -1,24 +1,33 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Colores from '../constants/Colores';
 
-const Bienvenida = () =>{
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.title}>ProSecure</Text>
-          <Text style={styles.subtitle}>Technologies</Text>
-        </View>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>EMPEZAR</Text>
-        </TouchableOpacity>
+const Bienvenida = () => {
+  const navigation = useNavigation();
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>ProSecure</Text>
+        <Text style={styles.subtitle}>Technologies</Text>
       </View>
-    );
-  }
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => navigation.navigate('Inicio')}
+      >
+        <Text style={styles.buttonText}>EMPEZAR</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colores.fondo
+    flex: 1,
+    backgroundColor: Colores.fondo,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   header: {
     flex: 1,
