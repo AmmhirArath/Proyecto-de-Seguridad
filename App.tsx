@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Bienvenida from './src/screen/Bienvenida';
 import Inicio from './src/screen/Inicio';
 import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';¿
+import * as SplashScreen from 'expo-splash-screen';
 
 const Stack = createStackNavigator();
 
