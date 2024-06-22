@@ -14,7 +14,7 @@ const Bienvenida = () => {
       </View>
       <TouchableOpacity 
         style={styles.button} 
-        onPress={() => navigation.navigate('Inicio')}
+        onPress={() => navigation.navigate('SeleccionarEdad')}
       >
         <Text style={styles.buttonText}>EMPEZAR</Text>
       </TouchableOpacity>
@@ -25,7 +25,7 @@ const Bienvenida = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colores.fondo,
+    backgroundColor: '#1C4C68',
     justifyContent: 'center',
     alignItems: 'center',
   },
