@@ -5,7 +5,7 @@ import Bienvenida from './src/screen/Bienvenida';
 import Inicio from './src/screen/Inicio';
 import SeleccionarEdad from './src/screen/SeleccionarEdad'
 import Colores from './src/constants/Colores';
-import Bienvenido from './src/screen/Bienvenido';
+import Bienvenido from './src/screen/HomeAdult'
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -35,7 +35,7 @@ const App = () => {
         />
         <Stack.Screen 
           name="Inicio" 
-          component={Inicio} 
+          component={Bienvenido} 
           options={{ headerShown: false }} 
         />
         <Stack.Screen 

@@ -43,7 +43,7 @@ const SeleccionarEdad = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#1C4C68', // Fondo de la sección azul
+        backgroundColor: Colores.fondo, // Fondo de la sección azul
     },
     blueSection: {
         flex: 2,

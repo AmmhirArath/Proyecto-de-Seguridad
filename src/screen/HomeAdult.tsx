@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Colores from '../constants/Colores';
 
-export default function Bienvenido() {
+const Bienvenidos = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.curvedBackground}></View>
       <Text style={styles.welcomeText}>Bienvenido</Text>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Informacion</Text>
@@ -20,44 +20,33 @@ export default function Bienvenido() {
       </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Colores.fondo, 
     alignItems: 'center',
     justifyContent: 'center',
-    position: 'relative',
-  },
-  curvedBackground: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '60%',
-    height: '100%',
-    backgroundColor: 'yellow',
-    borderBottomRightRadius: 300,
   },
   welcomeText: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 40,
+    color: Colores.blanco
   },
   button: {
     backgroundColor: 'white',
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 30,
     borderRadius: 20,
     marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-    elevation: 2,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: 'black',
   },
 });
+
+export default Bienvenidos;
