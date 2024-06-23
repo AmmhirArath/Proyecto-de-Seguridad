@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Bienvenida from './src/screen/Bienvenida';
+import ProQuiz from './src/screen/ProQuiz';
 import Inicio from './src/screen/Inicio';
 import SeleccionarEdad from './src/screen/SeleccionarEdad'
 import Colores from './src/constants/Colores';
@@ -9,6 +9,7 @@ import Bienvenido from './src/screen/HomeAdult';
 import AprenderAdul from './src/screen/AprenAdul';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import Bienvenida from './src/screen/Bienvenida';
 
 const Stack = createStackNavigator();
 

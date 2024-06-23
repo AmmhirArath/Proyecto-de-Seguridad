@@ -5,7 +5,8 @@ const Colores = {
     verde: '#04D600',
     rojo: '#FF0000',
     azulpuro: '#222B45',
-    azuloscuro: '#497698'
+    azuloscuro: '#497698',
+    azulclaro: '#BAD3FD'
 
 }
 export default Colores;
