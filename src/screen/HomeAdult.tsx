@@ -12,7 +12,7 @@ const Bienvenidos = () => {
         <Text style={styles.buttonText} onPress={() => navigation.navigate("AprenderAdult")}>Informacion</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Juegos</Text>
+        <Text style={styles.buttonText} onPress={() => navigation.navigate("Juegos")}>Juegos</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Puntuacion</Text>
