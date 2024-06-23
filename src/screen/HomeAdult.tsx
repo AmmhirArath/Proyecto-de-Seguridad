@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Colores from '../constants/Colores';
+import { useNavigation } from "@react-navigation/native";
 
 const Bienvenidos = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Text style={styles.welcomeText}>Bienvenido</Text>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Informacion</Text>
+        <Text style={styles.buttonText} onPress={() => navigation.navigate("AprenderAdult")}>Informacion</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Juegos</Text>
