@@ -22,7 +22,7 @@ const Bienvenida = () => {
           style={styles.nubeGrande}
         />
       </View>
-      <View style={styles.buttonEmpezar}>
+      <View >
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("SeleccionarEdad")}
