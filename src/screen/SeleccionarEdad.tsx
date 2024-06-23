@@ -6,7 +6,7 @@ import Colores from '../constants/Colores';
 
 const SeleccionarEdad = () => {
     const navigation = useNavigation();
-    const [selectedAge, setSelectedAge] = React.useState(29); // Edad inicial seleccionada
+    const [selectedAge, setSelectedAge] = React.useState(29);
     const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
 
     return (
@@ -43,7 +43,7 @@ const SeleccionarEdad = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colores.fondo, // Fondo de la sección azul
+        backgroundColor: Colores.fondo,
     },
     blueSection: {
         flex: 2,
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 10,
-        paddingBottom: 20, // Ajuste para espacio al botón
+        paddingBottom: 20,
     },
     title: {
         color: '#fff',
