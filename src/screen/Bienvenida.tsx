@@ -2,6 +2,7 @@ import * as React from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Colores from "../constants/Colores";
+import TouchableButton from "../components/Buttons/TouchableButton";
 
 const Bienvenida = () => {
   const navigation = useNavigation();
@@ -22,14 +23,7 @@ const Bienvenida = () => {
           style={styles.nubeGrande}
         />
       </View>
-      <View >
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("SeleccionarEdad")}
-        >
-          <Text style={styles.buttonText}>EMPEZAR</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableButton name="Empezar" handleButton={() => navigation.navigate("SeleccionarEdad")}/>
     </View>
   );
 };
@@ -71,19 +65,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "white",
     fontFamily: "Regular",
-  },
-  button: {
-    backgroundColor: Colores.blanco,
-    paddingVertical: 15,
-    paddingHorizontal: 80,
-    borderRadius: 10,
-    marginBottom: 20,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: Colores.negro,
-    fontFamily: "Bold",
-  },
+  }
 });
 
 export default Bienvenida;

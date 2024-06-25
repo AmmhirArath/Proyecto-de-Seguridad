@@ -9,6 +9,16 @@ const SeleccionarEdad = () => {
     const [selectedAge, setSelectedAge] = React.useState(29);
     const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
 
+    const handleNavigate = () => {
+        if (selectedAge <= 15) {
+            navigation.navigate('Inicio'); // o alguna pantalla apropiada para este rango de edad
+        } else if (selectedAge <= 30) {
+            navigation.navigate('AprenderAdult'); // o alguna pantalla apropiada para este rango de edad
+        } else {
+            navigation.navigate('Juegos'); // o alguna pantalla apropiada para este rango de edad
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.blueSection}>
@@ -32,7 +42,7 @@ const SeleccionarEdad = () => {
                         <Picker.Item key={age} label={`${age}`} value={age} />
                     ))}
                 </Picker>
-                <TouchableOpacity style={styles.button} onPress={() => console.log(`Selected age: ${selectedAge}`,navigation.navigate('Inicio'))}>
+                <TouchableOpacity style={styles.button} onPress={handleNavigate}>
                     <Text style={styles.buttonText}>CONTINUAR</Text>
                 </TouchableOpacity>
             </View>
@@ -50,7 +60,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-
     },
     whiteSection: {
         flex: 2,
