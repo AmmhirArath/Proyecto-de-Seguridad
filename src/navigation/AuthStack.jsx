@@ -14,6 +14,7 @@ import Colores from "../constants/Colores";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import appFirebase from "../../credentials";
 import { Animated } from 'react-native';
+import Chatbot from '../screen/Chatbox';
 
 const Stack = createStackNavigator();
 const auth = getAuth(appFirebase);
@@ -52,6 +53,11 @@ const AuthStack = () => {
           options={{
             headerShown: false,
           }}
+        />
+      <Stack.Screen 
+          name="Chatbot" 
+          component={Chatbot} 
+          options={{ headerShown: true, headerTransparent: true, title: ''}}
         />
         <Stack.Screen
           name="Bienvenida"
