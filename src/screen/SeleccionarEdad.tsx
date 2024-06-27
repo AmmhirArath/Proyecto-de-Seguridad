@@ -13,7 +13,7 @@ const SeleccionarEdad = () => {
         if (selectedAge <= 15) {
             navigation.navigate('Inicio'); // o alguna pantalla apropiada para este rango de edad
         } else if (selectedAge <= 30) {
-            navigation.navigate('AprenderAdult'); // o alguna pantalla apropiada para este rango de edad
+            navigation.navigate('Login'); // o alguna pantalla apropiada para este rango de edad
         } else {
             navigation.navigate('Juegos'); // o alguna pantalla apropiada para este rango de edad
         }
