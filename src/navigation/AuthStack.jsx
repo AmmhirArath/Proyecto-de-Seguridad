@@ -12,6 +12,7 @@ import Register from '../screen/Register';
 import Colores from '../constants/Colores';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import appFirebase from '../../credentials';
+import Chatbot from '../screen/Chatbox';
 
 const Stack = createStackNavigator();
 const auth = getAuth(appFirebase);
@@ -39,6 +40,11 @@ const AuthStack = () => {
 return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRoute}>
+      <Stack.Screen 
+          name="Chatbot" 
+          component={Chatbot} 
+          options={{ headerShown: true, headerTransparent: true, title: ''}}
+        />
         <Stack.Screen 
           name="Bienvenida" 
           component={Bienvenida} 

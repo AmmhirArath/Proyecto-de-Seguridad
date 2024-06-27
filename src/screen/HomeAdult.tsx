@@ -15,7 +15,7 @@ const Bienvenidos = () => {
         <Text style={styles.buttonText} onPress={() => navigation.navigate("Juegos")}>Juegos</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Puntuacion</Text>
+        <Text style={styles.buttonText} onPress={() => navigation.navigate("Chatbot")}>Chatbot</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Salir</Text>
