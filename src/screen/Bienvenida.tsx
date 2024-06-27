@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     padding: 40,
   },
   header: {
-    flex: 3,
+    flex: 3.5,
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: "bold",
     fontFamily: "Regular",
     color: "white",
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: 20,
     color: "white",
     fontFamily: "Regular",
   }
