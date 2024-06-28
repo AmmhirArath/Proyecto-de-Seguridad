@@ -1,16 +1,18 @@
 import React from "react";
-import { View, StyleSheet, Dimensions } from "react-native";
-
+import { View, StyleSheet, useWindowDimensions } from "react-native";
 import LottieView from "lottie-react-native";
 
 const Background = () => {
+  const { width, height } = useWindowDimensions();
+  const scaleFactor = 1.5;
+
   return (
-    <View style={[StyleSheet.absoluteFillObject, styles.container]}>
+    <View style={styles.container}>
       <LottieView
         source={require("../assets/Animations/background.json")}
         autoPlay
         loop
-        style={styles.lottie}
+        style={[styles.lottie, { width: width * scaleFactor, height: height * scaleFactor }]}
       />
     </View>
   );
@@ -18,10 +20,11 @@ const Background = () => {
 
 const styles = StyleSheet.create({
   container: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'center',
   },
   lottie: {
-    height: '101%',
-    width: 500
+
   },
 });
 

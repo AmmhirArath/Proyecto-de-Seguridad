@@ -6,23 +6,25 @@ import Background from './BackgroundGradient';
 
 const Bienvenidos = () => {
   const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-     <Background/>
-      <Text style={styles.welcomeText}>Bienvenido</Text>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText} onPress={() => navigation.navigate("AprenderAdult")}>Informacion</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText} onPress={() => navigation.navigate("Juegos")}>Juegos</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText} onPress={() => navigation.navigate("Chatbot")}>Chatbot</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Salir</Text>
-      </TouchableOpacity>
-      
+      <Background />
+      <View style={styles.overlay}>
+        <Text style={styles.welcomeText}>Bienvenido</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("AprenderAdult")}>
+          <Text style={styles.buttonText}>Informacion</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Juegos")}>
+          <Text style={styles.buttonText}>Juegos</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Chatbot")}>
+          <Text style={styles.buttonText}>Chatbot</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Salir</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -30,14 +32,17 @@ const Bienvenidos = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+  },
+  overlay: {
+    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   welcomeText: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 40,
-    color: Colores.blanco
+    color: Colores.blanco,
   },
   button: {
     backgroundColor: 'white',
