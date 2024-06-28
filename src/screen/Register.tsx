@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Alert, ActivityIndicator, Keyboard } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import appFirebase from '../../credentials';
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Colores from '../constants/Colores';
+import AppLoader from "./Loader";
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const auth = getAuth(appFirebase);
+  const [registerLoading, setRegisterLoading] = useState(false)
 
   const handleRegister = async () => {
+    Keyboard.dismiss();
+    setRegisterLoading(true);
     if (password === confirmPassword) {
-      setLoading(true);
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await sendEmailVerification(auth.currentUser);
         Alert.alert('Registro exitoso', 'Cuenta creada con éxito. Por favor, verifica tu correo electrónico.');
         navigation.navigate('Login');
       } catch (error) {
+        setRegisterLoading(false);
         const errorCode = error.code;
         if (errorCode === 'auth/email-already-in-use')
           Alert.alert('Error en el registro', 'Correo electrónico ya está registrado');
@@ -33,14 +36,16 @@ const Register = () => {
         else
           Alert.alert('Error en el registro', error.message);
       } finally {
-        setLoading(false);
+        setRegisterLoading(false);
       }
     } else {
+      setRegisterLoading(false);
       Alert.alert('Error', 'Las contraseñas no coinciden');
     }
   };
 
   return (
+    <>
     <KeyboardAwareScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <View style={styles.blueSection}>
         <Text style={styles.title}>Registro</Text>
@@ -53,6 +58,7 @@ const Register = () => {
           onChangeText={setEmail}
           keyboardType="email-address"
           autoCapitalize="none"
+          inputMode='email'
         />
         <TextInput
           style={styles.input}
@@ -68,16 +74,20 @@ const Register = () => {
           onChangeText={setConfirmPassword}
           secureTextEntry
         />
-        {loading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
-        ) : (
-          <Button title="Registrarse" onPress={handleRegister} />
-        )}
+         <TouchableOpacity 
+            style={[styles.button, (!email || !password || !confirmPassword || registerLoading) && styles.buttonDisabled]} 
+            onPress={handleRegister}
+            disabled={!email || !password || !confirmPassword || registerLoading}
+          >
+            <Text style={styles.buttonText}>Registrarse</Text>
+          </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.loginLink}>¿Ya tienes una cuenta? Inicia sesión</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAwareScrollView>
+    {registerLoading ? <AppLoader/> : null}
+    </>
   );
 };
 
@@ -97,29 +107,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
+    paddingTop: 50,
+    padding: 40,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#fff',
   },
   input: {
-    height: 40,
+    height: 50,
     width: '100%',
     borderColor: '#ccc',
     borderWidth: 1,
-    marginBottom: 20,
+    marginBottom: 25,
     paddingHorizontal: 10,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   loginLink: {
-    marginTop: 20,
+    marginTop: 40,
     textAlign: 'center',
     color: 'blue',
+  },
+  button: {
+    backgroundColor: 'blue',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  buttonDisabled: {
+    backgroundColor: '#ccc',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

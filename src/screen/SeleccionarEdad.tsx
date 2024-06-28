@@ -27,7 +27,7 @@ const SeleccionarEdad = () => {
                     <Image
                         resizeMode="cover"
                         style={styles.imagen}
-                        source={require('../assets/Logosptm.png')}
+                        source={require('../assets/Img/Logosptm.png')}
                     />
                 </View>
             </View>

@@ -1,8 +1,16 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Colores from "../constants/Colores";
 import TouchableButton from "../components/Buttons/TouchableButton";
+import LottieView from "lottie-react-native";
 
 const Bienvenida = () => {
   const navigation = useNavigation();
@@ -13,17 +21,20 @@ const Bienvenida = () => {
         <Text style={styles.title}>ProSecure</Text>
         <Text style={styles.subtitle}>Technologies</Text>
         <Image
-          source={require("../assets/ProSecure.png")}
+          source={require("../assets/Img/ProSecure.png")}
           style={styles.logo}
         />
       </View>
       <View style={styles.nubeSota}>
         <Image
-          source={require("../assets/nubeGrande.png")}
+          source={require("../assets/Img/nubeGrande.png")}
           style={styles.nubeGrande}
         />
       </View>
-      <TouchableButton name="Empezar" handleButton={() => navigation.navigate("SeleccionarEdad")}/>
+      <TouchableButton
+        name="Empezar"
+        handleButton={() => navigation.navigate("SeleccionarEdad")}
+      />
     </View>
   );
 };
@@ -42,10 +53,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 50,
   },
-  nubeSota:{
-    flex: 4
+  nubeSota: {
+    flex: 4,
   },
- 
+
   logo: {
     width: 300,
     height: 300,
@@ -65,7 +76,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: "white",
     fontFamily: "Regular",
-  }
+  },
+  cloudContainer: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    zIndex: 1
+  },
+  lottie: {
+    width: 300,
+    height: 300
+  },
 });
 
 export default Bienvenida;

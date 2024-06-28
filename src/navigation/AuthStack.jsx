@@ -34,7 +34,6 @@ const AuthStack = () => {
       }
     });
 
-    // Limpieza del listener al desmontar el componente
     return () => unsubscribe();
   }, []);
 
@@ -87,7 +86,8 @@ const AuthStack = () => {
           options={{
             headerShown: true,
             headerTransparent: true,
-            title: "Iniciar Sesion",
+            title: "",
+            headerTintColor: Colores.blanco,
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />

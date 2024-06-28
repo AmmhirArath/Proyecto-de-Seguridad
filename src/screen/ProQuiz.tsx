@@ -8,7 +8,7 @@ const ProQuiz = () => {
             <Text style={titles.titulo}>ProSecure</Text>
             <Text style={titles.subtitulo}>Technologies</Text>
             <Text style={titles.welcome}>! Bienvendo a ProQuiz Seguridad Informatica para Adultos Mayores !</Text>
-            <Image style = {titles.image} source ={require('../assets/mobile-phone.png')}></Image>
+            <Image style = {titles.image} source ={require('../assets/Img/mobile-phone.png')}></Image>
             <Text style={titles.texto}>En este divertido y educativo minijuego, aprenderas a protegerte en el mundo digital de manera facil y entretenida. La seguridad informatica es crucial en la era digital, y queremos ayudarte a navegar por internet con confianza y seguridad.</Text>
             <TouchableOpacity
           style={titles.button}
