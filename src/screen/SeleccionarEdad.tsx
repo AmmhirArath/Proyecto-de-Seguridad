@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import Colores from '../constants/Colores';
+import Background from './BackgroundGradient';
 
 const SeleccionarEdad = () => {
     const navigation = useNavigation();
@@ -21,6 +22,7 @@ const SeleccionarEdad = () => {
 
     return (
         <View style={styles.container}>
+            <Background />
             <View style={styles.blueSection}>
                 <Text style={styles.title}>¡Queremos Conocerte!</Text>
                 <View style={styles.iconContainer}>

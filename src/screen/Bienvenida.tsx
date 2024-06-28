@@ -11,12 +11,14 @@ import { useNavigation } from "@react-navigation/native";
 import Colores from "../constants/Colores";
 import TouchableButton from "../components/Buttons/TouchableButton";
 import LottieView from "lottie-react-native";
+import Background from './BackgroundGradient';
 
 const Bienvenida = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
+      <Background />
       <View style={styles.header}>
         <Text style={styles.title}>ProSecure</Text>
         <Text style={styles.subtitle}>Technologies</Text>

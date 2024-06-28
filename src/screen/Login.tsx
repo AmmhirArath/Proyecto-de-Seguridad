@@ -15,6 +15,7 @@ import appFirebase from "../../credentials";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import AppLoader from "./Loader";
 import Colores from '../constants/Colores';
+import Background from './BackgroundGradient';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -49,6 +50,7 @@ const Login = () => {
         contentContainerStyle={styles.container}
         keyboardShouldPersistTaps="handled"
       >
+        <Background />
         <View style={styles.blueSection}>
           <Text style={styles.title}>Iniciar Sesión</Text>
         </View>
