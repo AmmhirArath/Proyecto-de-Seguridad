@@ -19,6 +19,13 @@ const Bienvenida = () => {
   return (
     <View style={styles.container}>
       <Background />
+      <LottieView
+        source={require("../assets/Animations/cloud.json")}
+        autoPlay
+        loop
+        style={styles.lottie}
+      />
+      
       <View style={styles.header}>
         <Text style={styles.title}>ProSecure</Text>
         <Text style={styles.subtitle}>Technologies</Text>
@@ -47,7 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colores.fondo,
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 40,
+    padding: 50
   },
   header: {
     flex: 3.5,
@@ -65,7 +72,7 @@ const styles = StyleSheet.create({
   },
   nubeGrande: {
     width: 400,
-    height: 350,
+    height: 300,
     opacity: 0.7,
   },
   title: {
@@ -85,8 +92,11 @@ const styles = StyleSheet.create({
     zIndex: 1
   },
   lottie: {
-    width: 300,
-    height: 300
+    width: 170,
+    height: 250,
+    position: "absolute",
+    top: -40,  // Ajusta la distancia desde el borde inferior
+    right: -30,
   },
 });
 
