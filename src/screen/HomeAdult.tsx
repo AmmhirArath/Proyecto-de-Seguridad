@@ -2,11 +2,13 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Colores from '../constants/Colores';
 import { useNavigation } from "@react-navigation/native";
+import Background from './BackgroundGradient';
 
 const Bienvenidos = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
+     <Background/>
       <Text style={styles.welcomeText}>Bienvenido</Text>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText} onPress={() => navigation.navigate("AprenderAdult")}>Informacion</Text>
@@ -20,6 +22,7 @@ const Bienvenidos = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Salir</Text>
       </TouchableOpacity>
+      
     </View>
   );
 };
@@ -27,7 +30,6 @@ const Bienvenidos = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colores.fondo, 
     alignItems: 'center',
     justifyContent: 'center',
   },
