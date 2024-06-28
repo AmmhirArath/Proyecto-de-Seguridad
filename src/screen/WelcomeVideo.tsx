@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View, Dimensions, useWindowDimensions } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,6 +9,9 @@ const videoSource = require('../assets/videos/Animacion-inicio.mp4');
 const WelcomeScreen = () => {
   const navigation = useNavigation();
   const video = useRef(null);
+
+  const { width, height } = useWindowDimensions();
+  const scaleFactor = 1.5;
 
   const handleVideoEnd = () => {
     navigation.navigate('Bienvenida'); 
@@ -25,7 +28,7 @@ const WelcomeScreen = () => {
     <View style={styles.container}>
       <Video
         ref={video}
-        style={styles.video}
+        style={[styles.video, { width: width * scaleFactor, height: height * scaleFactor }]}
         source={videoSource} 
         useNativeControls={false}
         resizeMode={ResizeMode.CONTAIN}
@@ -48,8 +51,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
   },
   video: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
   },
 });
 

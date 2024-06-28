@@ -79,7 +79,7 @@ const Login = () => {
             onPress={handleLogin}
             disabled={!email || !password || loginPending}
           >
-            <Text style={styles.buttonText}>Ingresar</Text>
+            <Text style={styles.buttonText}>INGRESAR</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate("Register")}>
             <Text style={styles.registerLink}>
@@ -132,22 +132,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'blue',
   },
-  button: {
-    backgroundColor: 'blue',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginTop: 20,
-  },
   buttonDisabled: {
     backgroundColor: '#ccc',
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
+  button: {
+    backgroundColor: '#4682b4',
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderRadius: 10,
+    alignItems: 'center'
+},
+buttonText: {
+    color: 'white',
+    fontSize: 18,
+},
 });
 
 export default Login;
