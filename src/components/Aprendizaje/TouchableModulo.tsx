@@ -27,8 +27,6 @@ const styles = StyleSheet.create({
         color: Colores.azuloscuro,
     },
     gridItem: {
-        width: 120,
-        height: 120,
         backgroundColor: Colores.blanco,
         justifyContent: 'center',
         alignItems: 'center',

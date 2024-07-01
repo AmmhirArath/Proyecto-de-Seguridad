@@ -3,10 +3,13 @@ import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'rea
 import { Audio } from 'expo-av';
 import Colores from '../../constants/Colores';
 import TouchableModulo from '../../components/Aprendizaje/TouchableModulo';
+import { Modules } from '../../../ModuloNiños';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeNiños = () => {
     const [sound, setSound] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const navigation = useNavigation();
 
     async function playSound() {
         try {
@@ -35,6 +38,42 @@ const HomeNiños = () => {
         };
     }, []);
 
+    const getStyleById = (id) => {
+        switch (id) {
+            case 1:
+                return styles.modulo1;
+            case 2:
+                return styles.modulo2;
+            case 3:
+                return styles.modulo3;           
+            case 4:
+                return styles.modulo4;            
+            case 5:
+                return styles.modulo5;
+            case 6:
+                return styles.modulo6;    
+            default:
+                return styles.defaultModulo;
+        }
+    };
+    const getStyleIconById = (id) => {
+        switch (id) {
+            case 1:
+                return Colores.verde;
+            case 2:
+                return Colores.rosa;
+            case 3:
+                return Colores.azuloscuro;
+            case 4:
+                return Colores.purpura;
+            case 5:
+                return Colores.rojo;
+            case 6:
+                return Colores.fondo
+            default:
+                return styles.defaultModulo;
+        }
+    };
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.header}>
@@ -51,12 +90,17 @@ const HomeNiños = () => {
                 />
             </TouchableOpacity>
             <View style={styles.rowContainer}>
-                <TouchableModulo icon={'laptop-house'} color={Colores.verde} name='Max contra el Cyberbullyng' handleButton={() => console.log('Max pelotudo')} styleContainer={styles.modulo1} styleText={styles.textomodulo} />
-                <TouchableModulo icon={'question'} color={Colores.rosa} name='El Misterio de Luna' handleButton={() => console.log('Luna')} styleContainer={styles.modulo2} styleText={styles.textomodulo} />
-                <TouchableModulo icon={'theater-masks'} color={Colores.azuloscuro} name='El Hacker Desconocido' handleButton={() => console.log('Hacker')} styleContainer={styles.modulo3} styleText={styles.textomodulo} />
-                <TouchableModulo icon={'gamepad'} color={Colores.purpura} name='Sofía y el Juego Malicioso' handleButton={() => console.log('Sofia')} styleContainer={styles.modulo4} styleText={styles.textomodulo} />
-                <TouchableModulo icon={'user-tie'} color={Colores.rojo} name='Misión Rescate' handleButton={() => console.log('Mision')} styleContainer={styles.modulo5} styleText={styles.textomodulo} />
-                <TouchableModulo icon={'skull-crossbones'} color={Colores.fondo} name='La trampa del Capitan Phish' handleButton={() => console.log('Capitan Pshis')} styleContainer={styles.modulo6} styleText={styles.textomodulo} />
+                {Modules.Historias.map((Module) => (
+                    <TouchableModulo
+                        icon={Module.Icon}
+                        color={getStyleIconById(Module.id)}
+                        name={Module.titulo}
+                        handleButton={() => navigation.navigate('InfoNiños', { Module })}
+                        styleContainer={getStyleById(Module.id)}
+                        styleText={styles.textomodulo}
+                        key={Module.id}
+                    />
+                ))}
             </View>
         </ScrollView>
     );
@@ -98,22 +142,90 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
     modulo1: {
+        color: Colores.verde,
         borderColor: Colores.verde,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     modulo2: {
+        color: Colores.rosa,
         borderColor: Colores.rosa,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     modulo3: {
         borderColor: Colores.azuloscuro,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     modulo4: {
         borderColor: Colores.purpura,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     modulo5: {
         borderColor: Colores.rojo,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     modulo6: {
         borderColor: Colores.fondo,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
+    },
+    defaultModulo: {
+        borderColor: Colores.negro,
+        width: 120,
+        height: 120,
+        backgroundColor: Colores.blanco,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+        borderWidth: 2,
     },
     textomodulo: {
         fontSize: 12

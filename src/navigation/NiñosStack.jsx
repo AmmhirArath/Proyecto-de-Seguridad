@@ -3,7 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeNiños from "../screen/NiñosScreen/HomeNiños";
 import { useState } from "react";
 import Colores from "../constants/Colores";
-
+import InfoNiños from "../screen/NiñosScreen/InfoNiños"
 const Stack = createStackNavigator();
 
 const NiñosStack = () => {
@@ -19,6 +19,16 @@ const NiñosStack = () => {
                     title: "",
                     headerTintColor: Colores.negro,
                   }}
+            />
+            <Stack.Screen
+              name="InfoNiños"
+              component={InfoNiños}
+              options={{
+                headerShown: true,
+                headerTransparent: true,
+                title: "",
+                headerTintColor: Colores.blanco,
+              }}
             />
         </Stack.Navigator>
   );

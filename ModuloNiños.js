@@ -1,12 +1,37 @@
-export const Module ={
-    Historias:[
+export const Modules = {
+  Historias: [
     {
-      "id": 1,
-      "titulo": "Max y la Aventura contra el Cyberbullyng",
-      "historia": "Max era un chico de 12 años que disfrutaba de la tecnología y de conectarse con sus amigos en línea. Un día, mientras navegaba por su red social favorita, Max se dio cuenta de que uno de sus amigos, Lucas, estaba siendo acosado por un usuario anónimo. Este usuario enviaba mensajes crueles y humillantes a Lucas, lo que le hacía sentir muy mal. Preocupado por su amigo, Max decidió hablar con sus otros amigos, Ana, Sara y Carlos, para encontrar una solución. Todos acordaron que el cyberbullying era algo serio y que debían ayudar a Lucas a enfrentarlo. Juntos, formaron un equipo para detener al acosador en línea.Primero, Max y sus amigos hablaron con Lucas para ofrecerle su apoyo y recordarle que no estaba solo. Luego, decidieron informar a un adulto de confianza, el profesor de informática, el Sr. Martínez. El Sr. Martínez les explicó que debían recopilar evidencia del acoso, como capturas de pantalla de los mensajes, para poder reportarlo adecuadamente. Con la ayuda del Sr. Martínez, Max y su equipo reportaron a la plataforma de redes sociales sobre el acoso. La plataforma tomó medidas y bloqueó al usuario anónimo. Además, el Sr. Martínez organizó una charla en la escuela sobre la importancia de la amabilidad y el respeto en internet. Durante la charla, los estudiantes aprendieron sobre los efectos del cyberbullying y cómo prevenirlo. Max y sus amigos compartieron su experiencia y animaron a otros a hablar y buscar ayuda si alguna vez eran víctimas de acoso en línea. Al final, Lucas se sintió mucho mejor sabiendo que tenía amigos que lo apoyaban y una escuela que se preocupaba por su bienestar. Max y su equipo se sintieron orgullosos de haber hecho una diferencia y prometieron seguir promoviendo la bondad y el respeto en internet.",
-      "imagen": "src/assets/Img/Niños/Max.png",
-      "audio": "Aishete.mp3"
-    }
-    ]
+      id: 1,
+      titulo: "Max y la Aventura contra el Cyberbullying",
+      historia: "Max tenía 12 años y le encantaba la tecnología. Pasaba tiempo con sus amigos en línea, pero un día descubrió algo preocupante: su amigo Lucas estaba siendo tratado de manera cruel por alguien desconocido en internet. Este acosador enviaba mensajes que hacían sentir muy mal a Lucas. Max se reunió con sus amigos Ana, Sara y Carlos para encontrar una solución. Juntos, decidieron hablar con su profesor de informática, el Sr. Martínez, quien les explicó cómo recopilar pruebas del acoso, como capturas de pantalla de los mensajes. Con valentía, Max y su equipo reportaron el problema a la plataforma de redes sociales, que bloqueó al acosador. Además, organizaron una charla en la escuela sobre ser amables y respetuosos en internet. Lucas se sintió mejor sabiendo que tenía amigos que lo apoyaban, y Max aprendió lo importante que es ayudar a los demás en línea.",
+      Icon: "laptop-house",
+    },
+    {
+      id: 2,
+      titulo: "El Misterio de Luna",
+      historia: "Luna era una adolescente curiosa y experta en tecnología. Junto a sus amigos Max, Ana y su perro robot Byte, formaban un equipo de detectives digitales. Un día, Luna recibió un correo electrónico extraño que decía que había ganado un premio increíble. Aunque parecía emocionante, Luna sabía que podía ser peligroso. Mostró el correo a sus amigos, quienes descubrieron que era un intento de engaño para robar información personal. Usando sus habilidades en programación y ciberseguridad, Luna y su equipo rastrearon al hacker hasta un viejo almacén abandonado. Allí, enfrentaron a los ciberdelincuentes y los detuvieron antes de que pudieran hacer daño. Luna aprendió lo importante que es ser cuidadoso en línea y nunca creer en ofertas que parecen demasiado buenas para ser verdad.",
+      Icon: "question",
+    },
+    {
+      id: 3,
+      titulo: "El Hacker Desconocido",
+      historia: "En la ciudad de Solbrillante, Leo era un niño curioso que admiraba a su profesora de tecnología, la Sra. Martínez. Un día, la escuela comenzó a tener problemas extraños: las computadoras se encendían y apagaban solas, y las personas desaparecían misteriosamente, transportadas a diferentes épocas de la historia. Leo y la Sra. Martínez descubrieron que un hacker desconocido estaba manipulando el sistema escolar. El hacker usaba la ingeniería social para hacer que la gente interactuara con el sistema, lo que causaba los viajes en el tiempo. Trabajando juntos, Leo y la Sra. Martínez descifraron los mensajes crípticos del hacker y encontraron una manera de detenerlo. Descubrieron que el hacker era Max, el amigo de Leo, quien, por problemas en casa, había creado un dispositivo sin darse cuenta de las consecuencias. Con ayuda de Leo y la Sra. Martínez, Max detuvo su creación y aprendió sobre la responsabilidad y la seguridad en línea.",
+      Icon: "theater-masks",
+    },
+    {
+      id: 4,
+      titulo: "Sofía y el Juego Malicioso",
+      Icon: "gamepad",
+    },
+    {
+      id: 5,
+      titulo: "Misión Rescate",
+      Icon: "user-tie",
+    },
+    {
+      id: 6,
+      titulo: "El Club de Detectives",
+      Icon: "user-tie",
+    },
+  ],
 };
-
