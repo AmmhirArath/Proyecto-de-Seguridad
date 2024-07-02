@@ -3,7 +3,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import HomeNiños from "../screen/NiñosScreen/HomeNiños";
 import { useState } from "react";
 import Colores from "../constants/Colores";
-import InfoNiños from "../screen/NiñosScreen/InfoNiños"
+import InfoNiños from "../screen/NiñosScreen/InfoNiños";
+import TriviaNiños from "../screen/NiñosScreen/TriviaNiños";
+
 const Stack = createStackNavigator();
 
 const NiñosStack = () => {
@@ -28,6 +30,16 @@ const NiñosStack = () => {
                 headerTransparent: true,
                 title: "",
                 headerTintColor: Colores.blanco,
+              }}
+            />
+            <Stack.Screen
+              name="TriviaNiños"
+              component={TriviaNiños}
+              options={{
+                headerShown: true,
+                headerTransparent: true,
+                title: "",
+                headerTintColor: Colores.negro,
               }}
             />
         </Stack.Navigator>
