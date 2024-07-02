@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator, CardStyleInterpolators   } from "@react-navigation/stack";
+import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 import SeleccionarEdad from "../screen/SeleccionarEdad";
+import TemasAdultos from "../screen/TemaAdul";
 import Bienvenido from "../screen/HomeAdult";
-import AprenderAdul from "../screen/AprenAdul";
 import Bienvenida from "../screen/Bienvenida";
 import WelcomeScreen from "../screen/WelcomeVideo";
 import ProQuiz from "../screen/ProQuiz";
@@ -53,10 +53,10 @@ const AuthStack = () => {
             headerShown: false,
           }}
         />
-      <Stack.Screen 
-          name="Chatbot" 
-          component={Chatbot} 
-          options={{ headerShown: true, headerTransparent: true, title: ''}}
+        <Stack.Screen
+          name="Chatbot"
+          component={Chatbot}
+          options={{ headerShown: true, headerTransparent: true, title: '' }}
         />
         <Stack.Screen
           name="Bienvenida"
@@ -68,13 +68,13 @@ const AuthStack = () => {
               open: {
                 animation: 'timing',
                 config: {
-                  duration: 600, 
+                  duration: 600,
                 },
               },
               close: {
                 animation: 'timing',
                 config: {
-                  duration: 500, 
+                  duration: 500,
                 },
               },
             },
@@ -123,8 +123,8 @@ const AuthStack = () => {
           }}
         />
         <Stack.Screen
-          name="AprenderAdult"
-          component={AprenderAdul}
+          name="TemasAdultos"
+          component={TemasAdultos}
           options={{
             headerShown: true,
             headerTransparent: true,

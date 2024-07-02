@@ -11,18 +11,18 @@ const Bienvenidos = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Background />
-      <Text style={styles.welcomeText}>Bienvenido </Text>
+      <Text style={styles.welcomeText}>Bienvenido</Text>
       <Image
         source={require("../assets/Img/Logosptm.png")}
-        style={styles.image}
+        style={styles.logo}
         resizeMode="contain"
       />
-      <View style={styles.containerBotton}>
+      <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("AprenderAdult")}
+          onPress={() => navigation.navigate("TemasAdultos")}
         >
-          <Text style={styles.buttonText}>Informacion</Text>
+          <Text style={styles.buttonText}>Información</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
@@ -42,7 +42,12 @@ const Bienvenidos = () => {
       </View>
       <Image
         source={require("../assets/Img/nubeGrande.png")}
-        style={styles.image2}
+        style={styles.cloudImage}
+        resizeMode="contain"
+      />
+      <Image
+        source={require("../assets/Img/nubeGrande.png")}
+        style={styles.cloudImage2}
         resizeMode="contain"
       />
     </SafeAreaView>
@@ -52,38 +57,45 @@ const Bienvenidos = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
   welcomeText: {
     fontWeight: "bold",
     color: Colores.blanco,
     fontSize: 25,
-    marginVertical: 50,
+    marginVertical: 30,
   },
-  image: {
-    marginVertical: 20,
-  },
-  image2: {
+  logo: {
     height: 250,
-    position: "relative",
+    marginTop: 20, // Ajuste de margen superior
   },
-
+  buttonContainer: {
+    marginTop: 10, // Ajuste de margen superior
+  },
   button: {
     backgroundColor: "white",
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    borderRadius: 20,
-    marginVertical: 10,
-  },
-  containerBotton: {
-    flex: 1,
+    paddingVertical: 15,
+    paddingHorizontal: 50,
+    borderRadius: 25,
+    marginVertical: 9,
   },
   buttonText: {
     fontSize: 18,
     fontWeight: "bold",
     color: "black",
     textAlign: "center",
+  },
+  cloudImage: {
+    height: 300,
+    position: "absolute",
+    bottom: -35,
+    right: 20,
+  },
+  cloudImage2: {
+    height: 150,
+    position: "absolute",
+    top: 70,
+    left: 70,
   },
 });
 
