@@ -19,7 +19,6 @@ const TouchableButton = ({name, handleButton, styleContainer, styleText}: Button
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: Colores.blanco,
         paddingVertical: 15,
         paddingHorizontal: 80,
         borderRadius: 10,
@@ -27,7 +26,6 @@ const styles = StyleSheet.create({
       },
       buttonText: {
         fontSize: 18,
-        color: Colores.negro,
         fontFamily: "Bold",
       },
   });

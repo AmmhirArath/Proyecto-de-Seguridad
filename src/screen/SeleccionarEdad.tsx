@@ -4,6 +4,7 @@ import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from '@react-navigation/native';
 import Colores from '../constants/Colores';
 import Background from './BackgroundGradient';
+import TouchableButton from '../components/Buttons/TouchableButton';
 
 const SeleccionarEdad = () => {
     const navigation = useNavigation();
@@ -12,7 +13,7 @@ const SeleccionarEdad = () => {
 
     const handleNavigate = () => {
         if (selectedAge <= 15) {
-            navigation.navigate('Inicio'); // o alguna pantalla apropiada para este rango de edad
+            navigation.navigate('NiñosStack'); // o alguna pantalla apropiada para este rango de edad
         } else if (selectedAge <= 30) {
             navigation.navigate('Login'); // o alguna pantalla apropiada para este rango de edad
         } else {
@@ -44,9 +45,11 @@ const SeleccionarEdad = () => {
                         <Picker.Item key={age} label={`${age}`} value={age} />
                     ))}
                 </Picker>
-                <TouchableOpacity style={styles.button} onPress={handleNavigate}>
-                    <Text style={styles.buttonText}>CONTINUAR</Text>
-                </TouchableOpacity>
+                <TouchableButton
+                    name='Continuar'
+                    handleButton={handleNavigate}
+                    styleContainer={styles.button}
+                    styleText={styles.buttonText} />
             </View>
         </View>
     );
@@ -101,7 +104,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     button: {
-        backgroundColor: '#4682b4',
+        backgroundColor: Colores.azuloscuro,
         paddingVertical: 10,
         paddingHorizontal: 30,
         borderRadius: 25,

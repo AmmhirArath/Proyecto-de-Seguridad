@@ -25,7 +25,7 @@ const Bienvenida = () => {
         loop
         style={styles.lottie}
       />
-      
+
       <View style={styles.header}>
         <Text style={styles.title}>ProSecure</Text>
         <Text style={styles.subtitle}>Technologies</Text>
@@ -43,6 +43,8 @@ const Bienvenida = () => {
       <TouchableButton
         name="Empezar"
         handleButton={() => navigation.navigate("SeleccionarEdad")}
+        styleContainer={styles.button}
+        styleText={styles.text}
       />
     </View>
   );
@@ -95,9 +97,15 @@ const styles = StyleSheet.create({
     width: 170,
     height: 250,
     position: "absolute",
-    top: -40,  // Ajusta la distancia desde el borde inferior
+    top: -40,
     right: -30,
   },
+  text: {
+    color: Colores.negro,
+  },
+  button: {
+    backgroundColor: Colores.blanco,
+  }
 });
 
 export default Bienvenida;
