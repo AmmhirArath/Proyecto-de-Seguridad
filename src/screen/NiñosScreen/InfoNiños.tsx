@@ -5,6 +5,7 @@ import { Video, Audio } from 'expo-av';
 import Colores from '../../constants/Colores';
 import TouchableModulo from '../../components/Aprendizaje/TouchableModulo';
 import TouchableButton from '../../components/Buttons/TouchableButton';
+import { useNavigation } from '@react-navigation/native';
 
 const InfoNiños = () => {
     const route = useRoute();
@@ -12,6 +13,8 @@ const InfoNiños = () => {
     const [sound, setSound] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoVisible, setVideoVisible] = useState(false);
+    const navigation = useNavigation();
+
     //Logica para mapear los audios se deben cambiar todos ya que son musicas
     const handleAudioPress = async (moduleId) => {
         switch (moduleId) {
@@ -127,7 +130,7 @@ const InfoNiños = () => {
                 </View>
                 <Text style={styles.description}>{Module.historia}</Text>
                 <TouchableButton 
-                    handleButton={() => console.log('Juguemos')}
+                    handleButton={() => navigation.navigate('TriviaNiños', { Module })}
                     name={'Juguemos'}
                     styleContainer={styles.button}
                     styleText={styles.buttonText}
