@@ -11,6 +11,7 @@ import Colores from "../constants/Colores";
 import { useNavigation } from "@react-navigation/native";
 import Background from "./BackgroundGradient";
 import { SafeAreaView } from "react-native-safe-area-context";
+import data from "../../dataAdul";
 
 const TemaAdul = () => {
   const navigation = useNavigation();
@@ -25,51 +26,14 @@ const TemaAdul = () => {
           style={styles.cloudImage2}
           resizeMode="contain"
         />
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Phishing</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Malware</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ransomware</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>DoS y DDoS</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ingeniería Social</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ataques de Fuerza Bruta</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ataques de Hombre en el Medio</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Exploits de Vulnerabilidades</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Cross-Site Scripting </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Cross-Site Request Forgery</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Eavesdropping</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ataques de Redireccionamiento</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Rogue Software</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ataques de Criptografía</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Ataques de Insider</Text>
-        </TouchableOpacity>
+        {data.map((item) => (
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("AprenAdul", { item })}
+          >
+            <Text style={styles.buttonText}>{item.title}</Text>
+          </TouchableOpacity>
+        ))}
         <Image
           source={require("../assets/Img/nubeGrande.png")}
           style={styles.cloudImage}

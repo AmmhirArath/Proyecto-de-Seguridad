@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 import SeleccionarEdad from "../screen/SeleccionarEdad";
 import TemasAdultos from "../screen/TemaAdul";
+import AprenAdul from "../screen/AprenAdul";
 import Bienvenido from "../screen/HomeAdult";
 import Bienvenida from "../screen/Bienvenida";
 import WelcomeScreen from "../screen/WelcomeVideo";
@@ -115,6 +116,16 @@ const AuthStack = () => {
         <Stack.Screen
           name="SeleccionarEdad"
           component={SeleccionarEdad}
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            title: "",
+            headerTintColor: Colores.blanco,
+          }}
+        />
+        <Stack.Screen
+          name="AprenAdul"
+          component={AprenAdul}
           options={{
             headerShown: true,
             headerTransparent: true,

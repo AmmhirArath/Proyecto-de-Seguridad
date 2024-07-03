@@ -22,7 +22,7 @@ const Bienvenidos = () => {
           style={styles.button}
           onPress={() => navigation.navigate("TemasAdultos")}
         >
-          <Text style={styles.buttonText}>Información</Text>
+          <Text style={styles.buttonText}>Tipos de Ataques</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}

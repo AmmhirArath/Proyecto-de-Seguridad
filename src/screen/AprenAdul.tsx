@@ -11,22 +11,11 @@ import { AVPlaybackSource, Audio, Video } from "expo-av";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PagerView from "react-native-pager-view";
 import Background from "./BackgroundGradient";
+import { useRoute } from "@react-navigation/native";
 
 const AprenAdul = () => {
-  // data.js
-
-  const data = [
-    {
-      id: "1",
-      title: "Phishing",
-      description:
-        "es una técnica de ciberdelincuencia en la que un atacante intenta engañar a las personas para que revelen información personal y confidencial, como contraseñas, números de tarjetas de crédito o información bancaria. Esto se logra mediante el uso de mensajes de correo electrónico, sitios web falsos, mensajes de texto o llamadas telefónicas que se hacen pasar por entidades legítimas y confiables.",
-      image: require("../assets/Img/nubeGrande.png"),
-      video: require("../assets/videos/miguel2.mp4"),
-      audio: require("../assets/audio/miguel.mp3"),
-    },
-  ];
-
+  const route = useRoute();
+  const { item } = route.params;
   const [sound, setSound] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
@@ -72,26 +61,30 @@ const AprenAdul = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Background />
-      {data.map((item) => (
-        <Text style={styles.text}>{item.title}</Text>
-      ))}
-      {data.map((item) => (
-        <PagerView style={styles.pagerView} initialPage={0}>
-          <View style={styles.page}>
-            <Video source={item.video} style={styles.video} useNativeControls />
-          </View>
-          <View style={styles.page}>
-            <Image
-              source={item.image}
-              style={styles.image}
-              resizeMode="contain"
-            />
-          </View>
-        </PagerView>
-      ))}
+
+      <Text style={styles.text}>{item.title}</Text>
+
+      <PagerView style={styles.pagerView} initialPage={0}>
+        <View style={styles.page}>
+          <Video
+            source={item.video}
+            resizeMode="contain"
+            style={styles.video}
+            useNativeControls
+          />
+        </View>
+        <View style={styles.page}>
+          <Image
+            source={item.image}
+            style={styles.image}
+            resizeMode="contain"
+          />
+        </View>
+      </PagerView>
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => playSound(data[0].audio)}
+          onPress={() => playSound(item.audio)}
           style={styles.button}
         >
           <Text style={styles.textos}>Empezar</Text>
@@ -115,9 +108,8 @@ const AprenAdul = () => {
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
         <Text style={styles.text}>Definición</Text>
-        {data.map((item) => (
-          <Text style={styles.paragraph}>{item.description}</Text>
-        ))}
+
+        <Text style={styles.paragraph}>{item.description}</Text>
       </ScrollView>
     </SafeAreaView>
   );
