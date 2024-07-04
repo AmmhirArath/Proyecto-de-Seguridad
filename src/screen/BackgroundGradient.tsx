@@ -4,7 +4,7 @@ import LottieView from "lottie-react-native";
 
 const Background = () => {
   const { width, height } = useWindowDimensions();
-  const scaleFactor = 1.5;
+  const scaleFactor = 2.0;
 
   return (
     <View style={styles.container}>
