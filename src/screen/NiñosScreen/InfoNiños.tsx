@@ -27,9 +27,9 @@ const InfoNiños = () => {
             case 4:
                 return require('../../assets/Audio/Sofia.mp3');
             case 5:
-                return require('../../assets/Audio/Alex.mp3');
+                return require('../../assets/Audio/Pablo.mp3');
             case 6:
-                return require('../../assets/Audio/Barbara.mp3');
+                return require('../../assets/Audio/Ana.mp3');
             default:
                 return null;
         }

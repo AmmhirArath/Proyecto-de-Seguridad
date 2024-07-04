@@ -67,7 +67,7 @@ const TriviaNiños = () => {
         setFeedbackVisible(true);
         setTimeout(() => {
             setFeedbackVisible(false);
-        }, 2000);
+        }, 3500);
     };
 
     const closeModal = () => {
