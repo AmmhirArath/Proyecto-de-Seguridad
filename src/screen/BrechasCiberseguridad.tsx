@@ -12,15 +12,15 @@ const info = [
     { id: '5', content: 'Sony PlayStation Network Hack (2011)' },
     { id: '6', content: 'Operation Aurora (2009-2010)'},
     { id: '7', content: 'SolarWinds Hack (2020)'},
-    { id: '8', content: 'Operation Aurora (2009-2010)'},
-    { id: '9', content: 'Operation Aurora (2009-2010)'},
-    { id: '10', content: 'Operation Aurora (2009-2010)'},
+    { id: '8', content: 'Equifax Data Breach (2017)'},
+    { id: '9', content: 'NotPetya (2017)'},
+    { id: '10', content: 'ILOVEYOU Virus (2000)'},
 ];
 
 const EventosHistoricos = ({ navigation }: any) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source = {require('../assets/nubeGrande.png')}/>
+            <Image style={styles.image} source = {require('../assets/Img/nubeGrande.png')}/>
             <FlatList
                 data={info}
                 keyExtractor={(item) => item.id}

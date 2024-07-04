@@ -15,6 +15,8 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import appFirebase from "../../credentials";
 import Chatbot from '../screen/Chatbox';
 import NiñosStack from "./NiñosStack";
+import BrechasInfo from "../screen/InfoBrechas";
+import EventosHistoricos from "../screen/BrechasCiberseguridad";
 
 const Stack = createStackNavigator();
 const auth = getAuth(appFirebase);
@@ -142,6 +144,26 @@ const AuthStack = () => {
         <Stack.Screen
           name="Juegos"
           component={ProQuiz}
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            title: "",
+            headerTintColor: Colores.blanco,
+          }}
+        />
+        <Stack.Screen 
+          name="HistoriaHacks"
+          component={EventosHistoricos} 
+          options={{
+            headerShown: true,
+            headerTransparent: true,
+            title: "",
+            headerTintColor: Colores.blanco,
+          }}
+        />
+        <Stack.Screen 
+          name="BrechasHackeos"
+          component={BrechasInfo} 
           options={{
             headerShown: true,
             headerTransparent: true,

@@ -1,19 +1,10 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import ProQuiz from './src/screen/ProQuiz';
-import Inicio from './src/screen/Inicio';
-import SeleccionarEdad from './src/screen/SeleccionarEdad'
-import Colores from './src/constants/Colores';
-import Bienvenido from './src/screen/HomeAdult';
-import AprenderAdul from './src/screen/AprenAdul';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import Bienvenida from './src/screen/Bienvenida';
-import BrechasInfo from './src/screen/InfoBrechas';
-import EventosHistoricos from './src/screen/BrechasCiberseguridad';
-
-const Stack = createStackNavigator();
+import AuthStack from './src/navigation/AuthStack';
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); 
+LogBox.ignoreAllLogs();
 
 const App = () => {
   const [fontsLoaded, fontError]  = useFonts({
@@ -30,36 +21,7 @@ const App = () => {
     return null;
   }
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Bienvenido">
-        <Stack.Screen 
-          name="HistoriaHacks"
-          component={EventosHistoricos} 
-          options={{ headerShown: false }} 
-        />
-          <Stack.Screen 
-          name="BrechasHackeos"
-          component={BrechasInfo} 
-          options={{ headerShown: false }} 
-        />
-        <Stack.Screen 
-          name="Inicio" 
-          component={Bienvenido} 
-          options={{ headerShown: false }} 
-        />
-        <Stack.Screen 
-          name="SeleccionarEdad" 
-          component={SeleccionarEdad} 
-          options={{ headerShown: false }} 
-        />
-        <Stack.Screen 
-          name="AprenderAdult" 
-          component={AprenderAdul} 
-          options={{ headerShown: false }} 
-        />
-        
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AuthStack/>
   );
 }
 
