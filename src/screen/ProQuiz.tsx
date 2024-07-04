@@ -1,8 +1,12 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity  } from 'react-native';
 import Colores from '../constants/Colores';
+import TouchableButton from '../components/Buttons/TouchableButton';
+import { useNavigation } from '@react-navigation/native';
+
 
 const ProQuiz = () => {
+    const navigation = useNavigation();
     return(
         <View style={titles.container}>
             <Text style={titles.titulo}>ProSecure</Text>
@@ -10,11 +14,12 @@ const ProQuiz = () => {
             <Text style={titles.welcome}>! Bienvendo a ProQuiz Seguridad Informatica para Adultos Mayores !</Text>
             <Image style = {titles.image} source ={require('../assets/Img/mobile-phone.png')}></Image>
             <Text style={titles.texto}>En este divertido y educativo minijuego, aprenderas a protegerte en el mundo digital de manera facil y entretenida. La seguridad informatica es crucial en la era digital, y queremos ayudarte a navegar por internet con confianza y seguridad.</Text>
-            <TouchableOpacity
-          style={titles.button}
-        >
-          <Text style={titles.buttonText}>Siguiente</Text>
-        </TouchableOpacity>
+
+<TouchableButton
+                    name='Empezar'
+                    handleButton={()=> navigation.navigate('HistoriaHacks')}
+                    styleContainer={titles.button}
+                    styleText={titles.buttonText} />
         </View>
     )
 }
