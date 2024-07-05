@@ -19,17 +19,17 @@ const InfoNiños = () => {
     const handleAudioPress = async (moduleId) => {
         switch (moduleId) {
             case 1:
-                return require('../../assets/Audio/Max.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FMax.mp3?alt=media&token=ab616042-a367-4b99-b1f9-cb61afc31be3'};
             case 2:
-                return require('../../assets/Audio/Luna.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FLuna.mp3?alt=media&token=db080a86-5150-4dd5-8508-94aeef95530b'};
             case 3:
-                return require('../../assets/Audio/Leo.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FLeo.mp3?alt=media&token=1600d267-15ce-4db7-ad8f-47f806acaa67'};
             case 4:
-                return require('../../assets/Audio/Sofia.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FSofia.mp3?alt=media&token=6ac922b4-b5df-48bd-8b2c-6133e6b07df1'};
             case 5:
-                return require('../../assets/Audio/Pablo.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FPablo.mp3?alt=media&token=bdf2e690-d49e-40d1-80bb-a586dd439837'};
             case 6:
-                return require('../../assets/Audio/Ana.mp3');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FAudios%2FAna.mp3?alt=media&token=96e1ebf3-5bf8-47f7-92e0-7afa0c5c39a7'};
             default:
                 return null;
         }
@@ -66,19 +66,19 @@ const InfoNiños = () => {
     const getImageForModule = (moduleId) => {
         switch (moduleId) {
             case 1:
-                return require('../../assets/Img/Niños/Max.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FMax.png?alt=media&token=d46cb198-e07c-49ac-a593-e028caee6659' };
             case 2:
-                return require('../../assets/Img/Niños/Luna.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FLuna.png?alt=media&token=c449e4ec-9c61-4d35-a723-c35194df7bfa' };
             case 3:
-                return require('../../assets/Img/Niños/Leo.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FLeo.png?alt=media&token=37d31292-b4bb-4d42-9a3d-209f567071da' };
             case 4:
-                return require('../../assets/Img/Niños/Sofia.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FSofia.png?alt=media&token=bab5b951-aad4-4008-87e6-2d7cbd340566' };
             case 5:
-                return require('../../assets/Img/Niños/Alex.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FAlex.png?alt=media&token=47a25fc2-0a08-4fa3-a7a3-2088b8daf057' };
             case 6:
-                return require('../../assets/Img/Niños/Barbara.png');
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FFotos%2FNi%C3%B1os%2FBarbara.png?alt=media&token=7221857d-a83c-4cd9-a8b7-9fd718bd4593'};
             default:
-                return require('../../assets/Img/Niños/Leo.png');
+                return require('../../assets/Img/ProSecure.png');
         }
     };
 
