@@ -3,7 +3,6 @@ import { StyleSheet, View, Dimensions, useWindowDimensions } from 'react-native'
 import { Video, ResizeMode } from 'expo-av';
 import { useNavigation } from '@react-navigation/native';
 
-// Importa el video localmente
 const videoSource = require('../assets/videos/Animacion-inicio.mp4');
 
 const WelcomeScreen = () => {

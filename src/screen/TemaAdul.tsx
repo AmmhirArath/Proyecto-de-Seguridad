@@ -68,14 +68,14 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     width: 300,
     height: 50,
-    backgroundColor: "white", // Color de fondo del botón TouchableOpacity
+    backgroundColor: "white",
     borderRadius: 65,
     textAlign: "center",
     justifyContent: "center",
   },
   buttonText: {
     fontSize: 18,
-    color: "black", // Color del texto dentro del botón
+    color: "black",
     textAlign: "center",
     fontWeight: "bold",
   },

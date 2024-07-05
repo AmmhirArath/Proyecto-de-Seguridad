@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 250,
-    marginTop: 20, // Ajuste de margen superior
+    marginTop: 20,
   },
   buttonContainer: {
-    marginTop: 10, // Ajuste de margen superior
+    marginTop: 10,
   },
   button: {
     backgroundColor: "white",

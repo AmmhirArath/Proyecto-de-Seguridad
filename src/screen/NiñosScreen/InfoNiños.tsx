@@ -15,7 +15,6 @@ const InfoNiños = () => {
     const [videoVisible, setVideoVisible] = useState(false);
     const navigation = useNavigation();
 
-    //Logica para mapear los audios se deben cambiar todos ya que son musicas
     const handleAudioPress = async (moduleId) => {
         switch (moduleId) {
             case 1:
@@ -62,7 +61,7 @@ const InfoNiños = () => {
             }
         };
     }, [sound]);
-    //Logica para mapear las fotos por id ya esta completo
+
     const getImageForModule = (moduleId) => {
         switch (moduleId) {
             case 1:
@@ -93,7 +92,7 @@ const InfoNiños = () => {
     const closeVideoModal = () => {
         setVideoVisible(false);
     };
-    //Logica para mapear los videos por id se debe hacer todo pinche peter webea
+
     const videoUrlForModule = (moduleId) => {
         switch (moduleId) {
             case 1:

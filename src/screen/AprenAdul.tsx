@@ -13,12 +13,14 @@ import PagerView from "react-native-pager-view";
 import Background from "./BackgroundGradient";
 import { useRoute } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import Colores from "../constants/Colores";
 
 const AprenAdul = () => {
   const route = useRoute();
   const { item } = route.params;
   const [sound, setSound] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [fontSize, setFontSize] = useState<number>(20);
 
   useEffect(() => {
     return () => {
@@ -57,6 +59,14 @@ const AprenAdul = () => {
       await sound.playAsync();
       setIsPlaying(true);
     }
+  };
+
+  const increaseFontSize = () => {
+    setFontSize(fontSize + 2);
+  };
+
+  const decreaseFontSize = () => {
+    setFontSize(fontSize - 2);
   };
 
   return (
@@ -113,11 +123,24 @@ const AprenAdul = () => {
           minimumFontScale={0.5}
           selectable={true}
           suppressHighlighting={true}
-          style={styles.paragraph}
+          style={[styles.paragraph, { fontSize }]}
         >
           {item.description}
         </Text>
       </ScrollView>
+
+      <TouchableOpacity
+        onPress={increaseFontSize}
+        style={[styles.floatingButton, styles.increaseButton]}
+      >
+        <Icon name="plus" size={20} color={Colores.verde} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={decreaseFontSize}
+        style={[styles.floatingButton, styles.decreaseButton]}
+      >
+        <Icon name="minus" size={20} color={Colores.rojo}/>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -135,7 +158,7 @@ const styles = StyleSheet.create({
   },
   pagerView: {
     width: "100%",
-    height: "27%", // Ajusta según tus necesidades
+    height: "27%",
   },
   page: {
     flex: 1,
@@ -180,12 +203,23 @@ const styles = StyleSheet.create({
     width: 50,
     borderRadius: 200,
     alignItems: "center",
-
     justifyContent: "center",
   },
-  textos: {
-    fontSize: 14,
-    color: "black",
+  floatingButton: {
+    position: "absolute",
+    bottom: 20,
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#000",
+  },
+  increaseButton: {
+    right: 80,
+  },
+  decreaseButton: {
+    right: 20,
   },
   disabledButton: {
     opacity: 0.5,

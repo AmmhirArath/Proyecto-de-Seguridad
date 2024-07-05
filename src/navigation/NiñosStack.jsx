@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import HomeNiños from "../screen/NiñosScreen/HomeNiños";
 import { useState } from "react";
 import Colores from "../constants/Colores";
@@ -20,6 +20,7 @@ const NiñosStack = () => {
                     headerTransparent: true,
                     title: "",
                     headerTintColor: Colores.negro,
+                    ...TransitionPresets.ModalFadeTransition
                   }}
             />
             <Stack.Screen
@@ -30,6 +31,7 @@ const NiñosStack = () => {
                 headerTransparent: true,
                 title: "",
                 headerTintColor: Colores.blanco,
+                ...TransitionPresets.ModalFadeTransition
               }}
             />
             <Stack.Screen
@@ -40,6 +42,7 @@ const NiñosStack = () => {
                 headerTransparent: true,
                 title: "",
                 headerTintColor: Colores.negro,
+                ...TransitionPresets.ModalFadeTransition
               }}
             />
         </Stack.Navigator>

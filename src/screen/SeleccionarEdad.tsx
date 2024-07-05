@@ -12,12 +12,12 @@ const SeleccionarEdad = () => {
     const ageOptions = Array.from({ length: 100 }, (_, i) => i + 1);
 
     const handleNavigate = () => {
-        if (selectedAge <= 15) {
-            navigation.navigate('NiñosStack'); // o alguna pantalla apropiada para este rango de edad
-        } else if (selectedAge <= 30) {
-            navigation.navigate('Login'); // o alguna pantalla apropiada para este rango de edad
+        if (selectedAge <= 17) {
+            navigation.navigate('NiñosStack'); 
+        } else if (selectedAge <= 49) {
+            navigation.navigate('Login');
         } else {
-            navigation.navigate('Juegos'); // o alguna pantalla apropiada para este rango de edad
+            navigation.navigate('Inicio');
         }
     };
 

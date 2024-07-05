@@ -1,77 +1,127 @@
-
 import * as React from 'react';
-import { StyleSheet, View, Text, FlatList, TouchableOpacity,Image } from 'react-native';
+import { StyleSheet, View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import Colores from '../constants/Colores';
 
 
 const info = [
-    { id: '1', content: 'WannaCry (2017)'},
-    { id: '2', content: 'Stuxnet (2010)'},
-    { id: '3', content: 'Yahoo Data Breaches (2013-2014)'},
-    { id: '4', content: 'Target Data Breach (2013)'},
-    { id: '5', content: 'Sony PlayStation Network Hack (2011)' },
-    { id: '6', content: 'Operation Aurora (2009-2010)'},
-    { id: '7', content: 'SolarWinds Hack (2020)'},
-    { id: '8', content: 'Equifax Data Breach (2017)'},
-    { id: '9', content: 'NotPetya (2017)'},
-    { id: '10', content: 'ILOVEYOU Virus (2000)'},
+    { id: '1', content: 'WannaCry', year: 2017, image: require('../assets/Img/wannacry.jpg') },
+    { id: '2', content: 'Stuxnet', year: 2010, image: require('../assets/Img/stuxnet.jpg') },
+    { id: '3', content: 'Yahoo Data Breaches', year: 2013, image: require('../assets/Img/yahoo.jpg') },
+    { id: '4', content: 'Target Data Breach', year: 2013, image: require('../assets/Img/target.jpg') },
+    { id: '5', content: 'Sony PlayStation Network Hack', year: 2011, image: require('../assets/Img/playstation.jpg') },
+    { id: '6', content: 'Operation Aurora', year: 2009, image: require('../assets/Img/aurora.jpg') },
+    { id: '7', content: 'SolarWinds Hack', year: 2020, image: require('../assets/Img/solarwind.jpg') },
+    { id: '8', content: 'Equifax Data Breach', year: 2017, image: require('../assets/Img/equifax.jpg') },
+    { id: '9', content: 'NotPetya', year: 2017, image: require('../assets/Img/notpetya.jpg') },
+    { id: '10', content: 'ILOVEYOU Virus', year: 2000, image: require('../assets/Img/iloveyou.jpg') },
 ];
 
-const EventosHistoricos = ({ navigation }: any) => {
+info.sort((a, b) => a.year - b.year);
+
+const EventosHistoricos = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} source = {require('../assets/Img/nubeGrande.png')}/>
+            <Text style={styles.infoText}>
+                Se muestran los eventos históricos de ciberseguridad y los años en los que ocurrieron.
+            </Text>
             <FlatList
                 data={info}
                 keyExtractor={(item) => item.id}
+                horizontal={true}
                 renderItem={({ item }) => (
-                    <TouchableOpacity
-                        style={[styles.shadowBox,styles.button]}
-                        onPress={() => navigation.navigate("BrechasHackeos", { id: item.id, content: item.content })}
-                    >
-                    <Text style={styles.buttonText}>{item.content}</Text>
-                    </TouchableOpacity>
-                 
+                    <View style={styles.card}>
+                        <Image source={item.image} style={styles.itemImage} />
+                        <View style={styles.textContainer}>
+                            <Text style={styles.itemTitle}>{item.content}</Text>
+                            <Text style={styles.itemYear}>Año: {item.year}</Text>
+                        </View>
+                        <TouchableOpacity
+                            style={styles.buyButton}
+                            onPress={() => navigation.navigate("BrechasHackeos", { id: item.id, content: item.content })}
+                        >
+                            <Text style={styles.buyButtonText}>Leer Más</Text>
+                        </TouchableOpacity>
+                    </View>
                 )}
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyle={styles.flatListContent}
             />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex: 1,
         backgroundColor: Colores.azulclaro,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        paddingTop: 30,
-    },
-    button: {
-        backgroundColor: '#8AC4FF',
-        padding: 10,
-        marginVertical: 5,
-        borderRadius: 8,
-        marginTop:30,
-        width: '100%',
+        justifyContent: 'center',
         alignItems: 'center',
     },
-    buttonText: {
-        color: '#19297C',
+    infoText: {
+        color: Colores.azuloscuro,
         fontSize: 16,
-        fontFamily: 'Bold'
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginVertical: 20,
+        marginTop: 200,
+        paddingHorizontal: 20,
     },
-    image:{
-        position:'absolute',
-        zIndex:-1,
-        height:1000
+    flatListContent: {
+        alignItems: 'center',
+        paddingVertical: 10,
     },
-    shadowBox: {
-shadowColor: "blue",
-shadowOffset: {width: 0,height: 7,},
-shadowOpacity:  0.21,
-shadowRadius: 7.68,
-elevation: 4
-      },
+    card: {
+        backgroundColor: Colores.azuloscuro,
+        marginVertical: 5,
+        marginHorizontal: 10,
+        borderRadius: 8,
+        width: 280, 
+        alignItems: 'center',
+        height: 320,
+        justifyContent: 'center',
+        shadowColor: Colores.purpura,
+        borderColor: Colores.azulpuro,
+        borderWidth: 2,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 3,
+    },
+    itemTitle: {
+        color: Colores.blanco,
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    itemYear: {
+        color: Colores.blanco,
+        fontWeight: 'bold',
+        fontSize: 14,
+        marginTop: 5,
+    },
+    itemImage: {
+        width: 250,
+        height: 200, 
+        marginTop: 10,
+        resizeMode: 'contain',
+    },
+    textContainer: {
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    buyButton: {
+        backgroundColor: Colores.verde,
+        paddingVertical: 5,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        marginTop: 10,
+    },
+    buyButtonText: {
+        color: Colores.blanco,
+        fontWeight: 'bold',
+        fontSize: 14,
+        textAlign: 'center',
+    },
 });
 
 export default EventosHistoricos;

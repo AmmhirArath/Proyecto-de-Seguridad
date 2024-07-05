@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons'; // Asegúrate de que la importación es correcta
+import Ionicons from 'react-native-vector-icons/Ionicons'; 
 
 const ChatBubble = ({ role, text, onSpeech }) => {
     return (
