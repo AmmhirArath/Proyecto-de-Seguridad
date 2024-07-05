@@ -2,7 +2,6 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
-import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 import SeleccionarEdad from "../screen/SeleccionarEdad";
 import TemasAdultos from "../screen/TemaAdul";
 import AprenAdul from "../screen/AprenAdul";
@@ -56,11 +55,6 @@ const AuthStack = () => {
           options={{
             headerShown: false,
           }}
-        />
-        <Stack.Screen
-          name="Chatbot"
-          component={Chatbot}
-          options={{ headerShown: true, headerTransparent: true, title: '' }}
         />
         <Stack.Screen 
           name="Chatbot" 
