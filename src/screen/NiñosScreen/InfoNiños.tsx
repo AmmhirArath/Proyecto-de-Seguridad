@@ -97,7 +97,17 @@ const InfoNiños = () => {
     const videoUrlForModule = (moduleId) => {
         switch (moduleId) {
             case 1:
-                return require('../../assets/videos/Max.mp4');
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+            case 2:
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+            case 3:
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};            
+            case 4:
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+            case 5:
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};        
+            case 6:
+                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};            
             default:
                 return null;
         }
