@@ -59,6 +59,7 @@ const AuthStack = () => {
           name="Chatbot"
           component={Chatbot}
           options={{ headerShown: true, headerTransparent: true, title: '' }}
+        />
         <Stack.Screen 
           name="Chatbot" 
           component={Chatbot} 
