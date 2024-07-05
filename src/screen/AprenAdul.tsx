@@ -12,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import PagerView from "react-native-pager-view";
 import Background from "./BackgroundGradient";
 import { useRoute } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const AprenAdul = () => {
   const route = useRoute();
@@ -66,6 +67,13 @@ const AprenAdul = () => {
 
       <PagerView style={styles.pagerView} initialPage={0}>
         <View style={styles.page}>
+          <Image
+            source={item.image}
+            style={styles.image}
+            resizeMode="contain"
+          />
+        </View>
+        <View style={styles.page}>
           <Video
             source={item.video}
             resizeMode="contain"
@@ -73,43 +81,42 @@ const AprenAdul = () => {
             useNativeControls
           />
         </View>
-        <View style={styles.page}>
-          <Image
-            source={item.image}
-            style={styles.image}
-            resizeMode="contain"
-          />
-        </View>
       </PagerView>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          onPress={() => playSound(item.audio)}
           style={styles.button}
+          onPress={() => {
+            if (isPlaying) {
+              pauseSound();
+            } else {
+              playSound(item.audio);
+            }
+          }}
+          style={[
+            styles.button,
+            !isPlaying && !item.audio && styles.disabledButton,
+          ]}
         >
-          <Text style={styles.textos}>Empezar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={pauseSound}
-          style={[styles.button, !isPlaying && styles.disabledButton]}
-        >
-          <Text style={styles.textos}>Pausar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={resumeSound}
-          style={[styles.button, isPlaying && styles.disabledButton]}
-        >
-          <Text style={styles.textos}>Reanudar</Text>
+          <Icon name={isPlaying ? "pause" : "play"} size={30} color="#000" />
         </TouchableOpacity>
         <TouchableOpacity onPress={stopSound} style={styles.button}>
-          <Text style={styles.textos}>Terminar</Text>
+          <Icon name="stop" size={30} color="#000" />
         </TouchableOpacity>
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.text}>Definición</Text>
-
-        <Text style={styles.paragraph}>{item.description}</Text>
+        <Text style={styles.text2}>Definición</Text>
+        <Text
+          adjustsFontSizeToFit
+          allowFontScaling={true}
+          minimumFontScale={0.5}
+          selectable={true}
+          suppressHighlighting={true}
+          style={styles.paragraph}
+        >
+          {item.description}
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
@@ -128,7 +135,7 @@ const styles = StyleSheet.create({
   },
   pagerView: {
     width: "100%",
-    height: "30%", // Ajusta según tus necesidades
+    height: "27%", // Ajusta según tus necesidades
   },
   page: {
     flex: 1,
@@ -139,9 +146,16 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  text: {
-    fontSize: 30,
+  text2: {
+    fontSize: 25,
     fontWeight: "bold",
+    color: "#ffff",
+    marginVertical: 25,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
     color: "white",
     marginTop: 20,
   },
@@ -158,14 +172,15 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
-    marginVertical: 25,
+    marginVertical: 10,
   },
   button: {
     backgroundColor: "white",
-    height: 40,
-    width: 80,
-    borderRadius: 20,
+    height: 50,
+    width: 50,
+    borderRadius: 200,
     alignItems: "center",
+
     justifyContent: "center",
   },
   textos: {

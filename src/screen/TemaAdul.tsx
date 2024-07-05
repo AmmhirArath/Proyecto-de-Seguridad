@@ -55,15 +55,18 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: Colores.blanco,
     fontSize: 25,
+    marginVertical: 30,
   },
 
   scrollView: {
     padding: 20,
     width: 420,
+    justifyContent: "center",
+    alignItems: "center",
   },
   button: {
     marginBottom: 25,
-    width: 350,
+    width: 300,
     height: 50,
     backgroundColor: "white", // Color de fondo del botón TouchableOpacity
     borderRadius: 65,
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   buttonText: {
-    fontSize: 20,
+    fontSize: 18,
     color: "black", // Color del texto dentro del botón
     textAlign: "center",
     fontWeight: "bold",
