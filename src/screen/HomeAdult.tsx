@@ -28,16 +28,13 @@ const Bienvenidos = () => {
           style={styles.button}
           onPress={() => navigation.navigate("Juegos")}
         >
-          <Text style={styles.buttonText}>Juegos</Text>
+          <Text style={styles.buttonText}>Ataques Históricos</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("Chatbot")}
         >
           <Text style={styles.buttonText}>Chatbot</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Salir</Text>
         </TouchableOpacity>
       </View>
       <Image
