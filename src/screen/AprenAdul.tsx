@@ -68,14 +68,14 @@ const AprenAdul = () => {
       <PagerView style={styles.pagerView} initialPage={0}>
         <View style={styles.page}>
           <Image
-            source={item.image}
+            source={{ uri: item.image }}
             style={styles.image}
             resizeMode="contain"
           />
         </View>
         <View style={styles.page}>
           <Video
-            source={item.video}
+            source={{ uri: item.video }}
             resizeMode="contain"
             style={styles.video}
             useNativeControls
@@ -90,7 +90,7 @@ const AprenAdul = () => {
             if (isPlaying) {
               pauseSound();
             } else {
-              playSound(item.audio);
+              playSound({ uri: item.audio });
             }
           }}
           style={[
