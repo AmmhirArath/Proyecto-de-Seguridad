@@ -14,6 +14,7 @@ const Background = () => {
         loop
         style={[styles.lottie, { width: width * scaleFactor, height: height * scaleFactor }]}
       />
+      <View style={styles.overlay} />
     </View>
   );
 };
@@ -24,7 +25,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   lottie: {
-
+    position: 'absolute',
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.2)', 
   },
 });
 

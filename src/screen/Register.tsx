@@ -30,47 +30,62 @@ const Register = () => {
   const auth = getAuth(appFirebase);
   const [registerLoading, setRegisterLoading] = useState(false);
 
+  const validatePassword = (password) => {
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{6,}$/;
+    return regex.test(password);
+  };
+
   const handleRegister = async () => {
     Keyboard.dismiss();
     setRegisterLoading(true);
-    if (password === confirmPassword) {
-      try {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        await sendEmailVerification(auth.currentUser);
-        Alert.alert(
-          "Registro exitoso",
-          "Cuenta creada con éxito. Por favor, verifica tu correo electrónico."
-        );
-        navigation.navigate("Login");
-      } catch (error) {
-        setRegisterLoading(false);
-        const errorCode = error.code;
-        if (errorCode === "auth/email-already-in-use")
-          Alert.alert(
-            "Error en el registro",
-            "Correo electrónico ya está registrado"
-          );
-        else if (errorCode === "auth/invalid-email")
-          Alert.alert(
-            "Error en el registro",
-            "Correo electrónico no es válido"
-          );
-        else if (errorCode === "auth/weak-password")
-          Alert.alert(
-            "Error en el registro",
-            "La contraseña debe tener al menos 6 caracteres"
-          );
-        else Alert.alert("Error en el registro", error.message);
-      } finally {
-        setRegisterLoading(false);
-      }
-    } else {
+    if (password !== confirmPassword) {
       setRegisterLoading(false);
       Alert.alert("Error", "Las contraseñas no coinciden");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      setRegisterLoading(false);
+      Alert.alert(
+        "Error en el registro",
+        "La contraseña debe tener al menos 6 caracteres, una mayúscula, un número y un carácter especial"
+      );
+      return;
+    }
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      await sendEmailVerification(auth.currentUser);
+      Alert.alert(
+        "Registro exitoso",
+        "Cuenta creada con éxito. Por favor, verifica tu correo electrónico."
+      );
+      navigation.navigate("Login");
+    } catch (error) {
+      setRegisterLoading(false);
+      const errorCode = error.code;
+      if (errorCode === "auth/email-already-in-use")
+        Alert.alert(
+          "Error en el registro",
+          "Correo electrónico ya está registrado"
+        );
+      else if (errorCode === "auth/invalid-email")
+        Alert.alert(
+          "Error en el registro",
+          "Correo electrónico no es válido"
+        );
+      else if (errorCode === "auth/weak-password")
+        Alert.alert(
+          "Error en el registro",
+          "La contraseña debe tener al menos 6 caracteres"
+        );
+      else Alert.alert("Error en el registro", error.message);
+    } finally {
+      setRegisterLoading(false);
     }
   };
 

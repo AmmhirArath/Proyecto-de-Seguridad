@@ -89,7 +89,7 @@ const Chatbot = () => {
       style={styles.container}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
-      <Text style={styles.title}>Gemini chatbox</Text>
+      <Text style={styles.title}>Prosecure Chat</Text>
       <FlatList
         data={chat}
         renderItem={renderChatItem}
