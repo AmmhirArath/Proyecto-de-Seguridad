@@ -96,17 +96,17 @@ const InfoNiños = () => {
     const videoUrlForModule = (moduleId) => {
         switch (moduleId) {
             case 1:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FMax.mp4?alt=media&token=599d4d67-485b-482f-88c8-b9429240056c' };
             case 2:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FLuna.mp4?alt=media&token=5e7fb8f1-f98f-4138-a659-3c03634c37e1' };
             case 3:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};            
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FHacker.mp4?alt=media&token=5d9d51ce-ebc4-40ee-9230-3d8392b1d488' };           
             case 4:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FSofia.mp4?alt=media&token=c2978bb3-70fb-4bb5-b84e-c27813086817' };
             case 5:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};        
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FMision%20Extraccion.mp4?alt=media&token=1742fae4-7a8a-4a02-8ccc-e8f3a2496f29' };      
             case 6:
-                return null; // Borras el Null descomentas y pones el url dentro de las comillas{ uri: ''};            
+                return { uri: 'https://firebasestorage.googleapis.com/v0/b/wandis-pet.appspot.com/o/seguridad%2FVideos%2FVideoDeHistorias%2FEl%20Club%20de%20Detectives.mp4?alt=media&token=a54ca98a-495b-4abb-9714-d08da56bce0b' };           
             default:
                 return null;
         }
