@@ -12,11 +12,6 @@ const ProQuiz = () => {
     <SafeAreaView style={titles.container}>
       <Background />
       <Text style={titles.titulo}>ProSecure</Text>
-      <Text style={titles.subtitulo}>Technologies</Text>
-      <Image
-        style={titles.image}
-        source={require("../assets/Img/Ataques.png")}
-      ></Image>
       <Text style={titles.welcome}>Ataques Históricos de Hacking</Text>
       <TouchableButton
         name="Empezar"
